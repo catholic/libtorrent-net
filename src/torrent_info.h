@@ -8,7 +8,7 @@ namespace libtorrent
 namespace lt
 {
     ref class announce_entry;
-	ref class file_storage;
+    ref class file_storage;
 
     public ref class torrent_info
     {
@@ -17,7 +17,7 @@ namespace lt
         torrent_info(System::String^ fileName);
 
         ~torrent_info();
-		!torrent_info();
+        !torrent_info();
 
         void rename_file(int index, System::String^ new_filename);
         cli::array<announce_entry^>^ trackers();
@@ -26,13 +26,14 @@ namespace lt
         long long total_size();
         int piece_length();
         int num_files();
-		System::String^ torrent_info::file_at(int index);
+        System::String^ torrent_info::file_at(int index);
         bool is_valid();
         int piece_size(int index);
         System::String^ name();
         System::String^ comment();
         System::String^ creator();
         int metadata_size();
+        lt::file_storage^ file_storage();
 
     internal:
         torrent_info(const libtorrent::torrent_info& info);

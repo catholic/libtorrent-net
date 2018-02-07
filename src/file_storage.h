@@ -18,14 +18,14 @@ namespace lt
     public:
         file_storage();
         ~file_storage();
-		!file_storage();
+        !file_storage();
 
         bool is_valid();
         void reserve(int num_files);
         void add_file(System::String^ p, long long size);
         void rename_file(int index, System::String^ new_filename);
         int num_files();
-		System::String^ at(int index);
+        System::String^ at(int index);
         long long total_size();
         void set_num_pieces(int n);
         int num_pieces();

@@ -18,12 +18,12 @@ file_storage::file_storage()
 
 file_storage::~file_storage()
 {
-	this->!file_storage();
+    this->!file_storage();
 }
 
 file_storage::!file_storage()
 {
-	delete storage_;
+    delete storage_;
 }
 
 libtorrent::file_storage& file_storage::ptr()

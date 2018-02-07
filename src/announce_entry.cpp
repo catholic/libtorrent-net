@@ -21,12 +21,12 @@ announce_entry::announce_entry(System::String^ url)
 
 announce_entry::~announce_entry()
 {
-	this->!announce_entry();
+    this->!announce_entry();
 }
 
 announce_entry::!announce_entry()
 {
-	delete entry_;
+    delete entry_;
 }
 
 libtorrent::announce_entry* announce_entry::ptr()
@@ -50,13 +50,13 @@ void announce_entry::reset()
 }
 
 using ticks = std::chrono::duration<std::int64_t,
-	std::ratio_multiply<std::ratio<100>, std::nano>>;
+    std::ratio_multiply<std::ratio<100>, std::nano>>;
 
 std::chrono::system_clock::time_point
 ConvertDateTime(System::DateTime dateTime)
 {
-	using namespace std::chrono;
-	return system_clock::time_point{ ticks{ dateTime.Ticks - 22089888000000000 } };
+    using namespace std::chrono;
+    return system_clock::time_point{ ticks{ dateTime.Ticks - 22089888000000000 } };
 }
 
 bool announce_entry::can_announce(System::DateTime now, bool is_seed)

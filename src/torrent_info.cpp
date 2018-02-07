@@ -32,12 +32,12 @@ torrent_info::torrent_info(const libtorrent::torrent_info& info)
 
 torrent_info::~torrent_info()
 {
-	this->!torrent_info();
+    this->!torrent_info();
 }
 
 torrent_info::!torrent_info()
 {
-	delete info_;
+    delete info_;
 }
 
 void torrent_info::rename_file(int index, System::String^ new_filename)
@@ -85,8 +85,8 @@ int torrent_info::num_files()
 
 System::String^ torrent_info::file_at(int index)
 {
-	lt::file_storage ^ fs = gcnew lt::file_storage(info_->files());
-	return fs->at(index);
+    lt::file_storage ^ fs = gcnew lt::file_storage(info_->files());
+    return fs->at(index);
 }
 
 bool torrent_info::is_valid()
@@ -117,6 +117,11 @@ System::String^ torrent_info::creator()
 int torrent_info::metadata_size()
 {
     return info_->metadata_size();
+}
+
+lt::file_storage^ lt::torrent_info::file_storage()
+{
+    return gcnew lt::file_storage(info_->files());
 }
 
 libtorrent::torrent_info* torrent_info::ptr()
