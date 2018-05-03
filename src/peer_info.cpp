@@ -4,7 +4,7 @@
 
 #include "interop.h"
 
-using namespace lt;
+using namespace ltnet;
 
 #define PEER_INT_PROP(name) \
     int peer_info::name::get() \
@@ -19,12 +19,12 @@ peer_info::peer_info(libtorrent::peer_info& info)
 
 peer_info::~peer_info()
 {
-	this->!peer_info();
+    this->!peer_info();
 }
 
 peer_info::!peer_info()
 {
-	delete info_;
+    delete info_;
 }
 
 unsigned int peer_info::flags::get()

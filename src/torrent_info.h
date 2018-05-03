@@ -5,7 +5,7 @@ namespace libtorrent
     class torrent_info;
 }
 
-namespace lt
+namespace ltnet
 {
     ref class announce_entry;
     ref class file_storage;
@@ -33,7 +33,7 @@ namespace lt
         System::String^ comment();
         System::String^ creator();
         int metadata_size();
-        lt::file_storage^ file_storage();
+        file_storage^ file_storage();
 
     internal:
         torrent_info(const libtorrent::torrent_info& info);
