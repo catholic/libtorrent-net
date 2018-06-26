@@ -95,6 +95,8 @@
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>D:\my\home\cpp\libtorrent-1_1_7\include;D:\apps.portable\boost;$(IncludePath)</IncludePath>
     <LibraryPath>D:\my\home\cpp\libtorrent-1_1_7\bin\msvc-14.1\release\address-model-64\architecture-x86\asserts-off\boost-link-static\deprecated-functions-off\invariant-checks-off\link-static\logging-off\threading-multi\src;D:\apps.portable\boost\stage\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\Win64\$(Configuration)\</OutDir>
+    <IntDir>Win64\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -134,9 +136,11 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0500;__USE_W32_SOCKETS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>BOOST_ASIO_SEPARATE_COMPILATION;BOOST_ALL_NO_LIB;BOOST_ASIO_ENABLE_CANCELIO;BOOST_ASIO_HASH_MAP_BUCKETS=1021;BOOST_EXCEPTION_DISABLE;BOOST_SYSTEM_STATIC_LINK=1;TORRENT_DISABLE_GEO_IP;TORRENT_DISABLE_RESOLVE_COUNTRIES;TORRENT_USE_I2P=1;TORRENT_USE_TOMMATH;UNICODE;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_DEPRECATE;_FILE_OFFSET_BITS=64;_SCL_SECURE_NO_DEPRECATE;_UNICODE;_WIN32;_WIN32_WINNT=0x0601;__USE_W32_SOCKETS;TORRENT_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <UndefinePreprocessorDefinitions>
       </UndefinePreprocessorDefinitions>
+      <CompileAsManaged>true</CompileAsManaged>
+      <OmitFramePointers>false</OmitFramePointers>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>

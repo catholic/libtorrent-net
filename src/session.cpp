@@ -18,12 +18,12 @@ session::session()
 
 session::~session()
 {
-	this->!session();
+    this->!session();
 }
 
 session::!session()
 {
-	delete session_;
+    delete session_;
 }
 
 cli::array<torrent_handle^>^ session::get_torrents()
