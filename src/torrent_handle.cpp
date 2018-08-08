@@ -20,12 +20,12 @@ torrent_handle::torrent_handle(libtorrent::torrent_handle& handle)
 
 torrent_handle::~torrent_handle()
 {
-	this->!torrent_handle();
+    this->!torrent_handle();
 }
 
 torrent_handle::!torrent_handle()
 {
-	delete handle_;
+    delete handle_;
 }
 
 libtorrent::torrent_handle* torrent_handle::ptr()
@@ -422,4 +422,9 @@ void torrent_handle::rename_file(int index, System::String^ name)
 void torrent_handle::super_seeding(bool on)
 {
     handle_->super_seeding(on);
+}
+
+System::String^ ltnet::torrent_handle::info_hash()
+{
+    return interop::from_std_string(handle_->info_hash().to_string());
 }

@@ -15,7 +15,7 @@ namespace ltnet
 
     public:
         ~torrent_status();
-		!torrent_status();
+        !torrent_status();
 
         property System::String^ save_path { System::String^ get(); }
         property System::String^ name { System::String^ get(); }
@@ -53,6 +53,7 @@ namespace ltnet
         property int distributed_full_copies { int get(); }
         property int distributed_fraction { int get(); }
         property float distributed_copies { float get(); }
+        property int state {int get(); }
         property int block_size { int get(); }
         property int num_uploads { int get(); }
         property int num_connections { int get(); }

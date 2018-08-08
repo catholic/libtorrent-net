@@ -16,12 +16,12 @@ torrent_status::torrent_status(libtorrent::torrent_status& status)
 
 torrent_status::~torrent_status()
 {
-	this->!torrent_status();
+    this->!torrent_status();
 }
 
 torrent_status::!torrent_status()
 {
-	delete status_;
+    delete status_;
 }
 
 System::String^ torrent_status::save_path::get()
@@ -36,9 +36,9 @@ System::String^ torrent_status::name::get()
 
 System::TimeSpan torrent_status::next_announce::get()
 {
-	typedef std::chrono::duration<float> fsec;
-	typedef std::chrono::seconds s;
-	fsec fs = status_->next_announce;
+    typedef std::chrono::duration<float> fsec;
+    typedef std::chrono::seconds s;
+    fsec fs = status_->next_announce;
     return System::TimeSpan(0, 0, std::chrono::duration_cast<s>(fs).count());
 }
 
@@ -205,6 +205,11 @@ int torrent_status::distributed_fraction::get()
 float torrent_status::distributed_copies::get()
 {
     return status_->distributed_copies;
+}
+
+int torrent_status::state::get()
+{
+    return status_->state;
 }
 
 int torrent_status::block_size::get()

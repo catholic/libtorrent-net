@@ -16,6 +16,7 @@ namespace ltnet
         add_torrent_params();
         ~add_torrent_params();
         !add_torrent_params();
+        System::String^ info_hash();
 
         property System::String^ name
         {
